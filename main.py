@@ -9,6 +9,9 @@ import pickle
 from nltk.stem import PorterStemmer
 from nltk.corpus import stopwords
 from typing import Dict
+from fastapi.middleware.cors import CORSMiddleware
+
+
 
 # Download required resources
 nltk.download('punkt')
@@ -26,6 +29,15 @@ class TextInput(BaseModel):
 
 # Initialize FastAPI app
 app = FastAPI(title="Emotion Detection API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://krrishcoder.github.io"],  # 👈 use your actual GitHub Pages URL
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 # Text preprocessing function
 def clean_text(text: str) -> str:
