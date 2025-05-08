@@ -1,0 +1,19 @@
+# Ignore Python cache and virtual environment
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+
+# Ignore virtual environment folder
+.venv/
+venv/
+
+# Ignore system and editor files
+.DS_Store
+*.swp
+*.swo
+
+# (Optional) Jupyter and IPython
+.ipynb_checkpoints/
+*.ipynb
